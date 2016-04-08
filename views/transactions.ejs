@@ -1,19 +1,88 @@
-<h1>Transactions page</h1>
-<p>Your token:<span id="token"><%=token%></span></p>
-
-<h2>Create Stripe Payments</h2>
-
-<label for="amount">Amount:</label>
-<input type="number" name="amount" id="amount"><br>
-<label for="currency">Currency: </label>
-<input type="text" name="currency" id="currency"><br>
-<label for="cardnumber">Card number </label>
-<input type="text" name="customerid" id="cardnumber" class="card-number"><br>
-<label for="cvc">CVC: </label>
-<input type="number" name="cvc" id="cvc" class="card-cvc"><br>
-<label for="card-expiry-month">Expired Month: </label>
-<input type="number" name="card-expiry-month" id="card-expiry-month" class="card-expiry-month"><br>
-<label for="card-expiry-year">Expired Year: </label>
-<input type="number" name="card-expiry-year" id="card-expiry-year" class="card-expiry-year"><br>
-<p class="payment-errors"></p>
-<input type="button" class="submittransaction" id="submittransaction" value="Submit">
+<p style="display:none;">Your token:<span id="token"><%=token%></span></p>
+<div class="col-xs-10 col-xs-offset-1 top-spacer-40">
+   <div class="panel panel-primary">
+      <div class="panel-heading">Saved cards</div>
+      <div class="panel-body">
+         <div class="existing-cards">
+            <p class="text-center">Loading....</p>
+         </div>
+         <div class="col-xs-12">
+            <label for="amount2" class="col-sm-4 control-label">Amount:</label>
+            <div class="col-sm-6">
+               <input type="number" class="form-control" id="amount2" name="amount2" placeholder="0.00">
+            </div>
+         </div>
+         <div class="col-xs-12" style="margin-top:8px;">
+            <label for="currency2" class="col-sm-4 control-label">Currency:</label>
+            <div class="col-sm-6">
+               <input type="text" class="form-control" id="currency2" name="currency2" placeholder="USD">
+            </div>
+         </div>
+         <p class="payment-errors2 text-center"></p>
+      </div>
+      <div class="panel-footer">
+         <div class="form-group">
+            <div class="col-xs-offset-4 col-xs-4">
+               <button type="submit" id="processExistingCard" class="btn btn-primary btn-block">Proceed</button>
+            </div>
+         </div>
+         <div class="clearfix"></div>
+      </div>
+   </div>
+</div>
+<div class="col-xs-10 col-xs-offset-1 top-spacer-40">
+   <div class="panel panel-primary">
+      <div class="panel-heading">Add New Payment Method</div>
+      <div class="panel-body">
+         <h4>Create Stripe Payments</h4>
+         <hr>
+         <form class="form-horizontal new-payment-method">
+            <div class="form-group">
+               <label for="amount" class="col-sm-4 control-label">Amount:</label>
+               <div class="col-sm-6">
+                  <input type="number" class="form-control" id="amount" name="amount" placeholder="0.00">
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="currency" class="col-sm-4 control-label">Currency:</label>
+               <div class="col-sm-6">
+                  <input type="text" class="form-control" id="currency" name="currency" placeholder="USD">
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="cardnumber" class="col-sm-4 control-label">Card number :</label>
+               <div class="col-sm-6">
+                  <input type="number" class="form-control card-number" id="cardnumber" name="cardnumber" placeholder="xxxxxxxxxxxxxxxx">
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="cvc" class="col-sm-4 control-label">CVC</label>
+               <div class="col-sm-6">
+                  <input type="number" class="form-control card-cvc" id="cvc" name="cvc" placeholder="xxx">
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="card-expiry-month" class="col-sm-4 control-label">Expired Month:</label>
+               <div class="col-sm-6">
+                  <input type="number" class="form-control card-expiry-month" id="card-expiry-month" name="card-expiry-month" placeholder="mm">
+               </div>
+            </div>
+            <div class="form-group">
+               <label for="card-expiry-year" class="col-sm-4 control-label">Expired Year:  </label>
+               <div class="col-sm-6">
+                  <input type="number" class="form-control card-expiry-year" id="card-expiry-year" name="card-expiry-year" placeholder="yyyy">
+               </div>
+            </div>
+         </form>
+         <p class="payment-errors text-center"></p>
+      </div>
+      <div class="panel-footer">
+         <div class="form-group">
+            <div class="col-xs-offset-4 col-xs-4">
+               <button type="submit" id="submittransaction" class="btn btn-primary btn-block">Proceed</button>
+            </div>
+         </div>
+         <div class="clearfix"></div>
+      </div>
+   </div>
+</div>

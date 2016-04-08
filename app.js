@@ -12,6 +12,8 @@ var config = require( './config' );
 
 var routes = require( './routes/index' );
 var users = require( './routes/users' );
+var util = require('util');
+var longjohn = require('longjohn');
 
 var app = express();
 
@@ -60,6 +62,7 @@ if ( app.get( 'env' ) === 'development' ) {
             message: err.message,
             error: err
         } );
+        console.error(util.format('Uncaught Exception:- %s', err.stack === undefined ? err : err.stack));
     } );
 }
 
@@ -71,6 +74,7 @@ app.use( function( err, req, res, next ) {
         message: err.message,
         error: {}
     } );
+    console.error(util.format('Uncaught Exception:- %s', err.stack === undefined ? err : err.stack));
 } );
 
 

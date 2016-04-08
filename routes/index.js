@@ -40,6 +40,7 @@ router.use( function( req, res, next ) {
             }
             else {
                 // if everything is good, save to request for use in other routes
+                console.log(decoded._doc._id);
                 req.decoded = decoded;
                 next();
             }
@@ -59,5 +60,6 @@ router.use( function( req, res, next ) {
 
 
 router.post( '/createtransaction', transactionController.createTransaction );
+router.get('/getsavedcards', transactionController.retrieveSavedCards);
 
 module.exports = router;
