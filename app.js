@@ -13,7 +13,6 @@ var config = require( './config' );
 var routes = require( './routes/index' );
 var users = require( './routes/users' );
 var util = require('util');
-var longjohn = require('longjohn');
 
 var app = express();
 

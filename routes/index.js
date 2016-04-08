@@ -24,6 +24,12 @@ router.get( '/login', function( req, res ) {
     } );
 } );
 
+router.get( '/', function( req, res ) {
+    res.render( 'login', {
+        title: 'Login'
+    } );
+} );
+
 router.use( function( req, res, next ) {
 
     // check header or url parameters or post parameters for token
