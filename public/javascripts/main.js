@@ -4,7 +4,7 @@
 /*global $form:true*/
 
 //set Public key for Stripe payments
-Stripe.setPublishableKey('pk_test_pfxgyk9qzgWxywxEj7ECJx2z');
+Stripe.setPublishableKey('pk_test_cSOG5SulTWsPDeIvqy46EDBW');
 var isSubmit = false;
 $(document).ready(function() {
     $('#submittransaction').click(function() {
@@ -79,6 +79,10 @@ $(document).ready(function() {
                 $('.new-payment-method input').on('focus', function() {
                     $('input[name=savedcard]').attr('checked', false);
                 });
+            }else{
+            	$('#noneSavedCards').removeClass('hide');
+            	$('#savedCards').addClass('hide');
+            	$('#savedCardsFooter').addClass('hide');
             }
         });
 

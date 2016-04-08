@@ -2,7 +2,7 @@
 <div class="col-xs-10 col-xs-offset-1 top-spacer-40">
    <div class="panel panel-primary">
       <div class="panel-heading">Saved cards</div>
-      <div class="panel-body">
+      <div id="savedCards" class="panel-body">
          <div class="existing-cards">
             <p class="text-center">Loading....</p>
          </div>
@@ -20,7 +20,10 @@
          </div>
          <p class="payment-errors2 text-center"></p>
       </div>
-      <div class="panel-footer">
+      <div id="noneSavedCards" class="panel-body hide">
+      		<p class="text-center">No saved cards found</p>
+      </div>
+      <div class="panel-footer" id="savedCardsFooter">
          <div class="form-group">
             <div class="col-xs-offset-4 col-xs-4">
                <button type="submit" id="processExistingCard" class="btn btn-primary btn-block">Proceed</button>
