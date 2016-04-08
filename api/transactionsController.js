@@ -3,7 +3,7 @@
 var Transactions = require('../models/transactions.model.js');
 var UserSavedCards = require('../models/usersavedcard.model.js');
 var config = require('../config');
-var Stripe = require('stripe')(config.stripeApiKey);
+var Stripe = require('stripe')( process.env.stripeApiKey);
 
 exports.index = function(req, res, next) {
     if (req.body) {
