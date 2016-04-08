@@ -79,11 +79,8 @@ $(document).ready(function() {
                 $('.new-payment-method input').on('focus', function() {
                     $('input[name=savedcard]').attr('checked', false);
                 });
-            }else{
-            	$('#noneSavedCards').removeClass('hide');
-            	$('#savedCards').addClass('hide');
-            	$('#savedCardsFooter').addClass('hide');
-            }
+            } else
+            	hideSavedCards();
         });
 
 
@@ -121,5 +118,14 @@ $(document).ready(function() {
             }
 
         });
+    }
+    
+    if (window.location.pathname === '/register')
+    	hideSavedCards();
+    
+    function hideSavedCards() {
+    	$('#noneSavedCards').removeClass('hide');
+    	$('#savedCards').addClass('hide');
+    	$('#savedCardsFooter').addClass('hide');
     }
 });
