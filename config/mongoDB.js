@@ -2,5 +2,6 @@
 
 var mongoose = require( 'mongoose' );
 var config = require( './index.js' );
-
-mongoose.connect( config.mongoURI );
+console.log(process.env)
+console.log(process.env.dbPath )
+mongoose.connect( process.env.dbPath );
